@@ -2,6 +2,11 @@ using System;
 
 namespace Com.Bit34Games.Director.Signaling
 {
+
+
+
+
+
     public class Signal : ISignal
     {
         //  DELEGATES

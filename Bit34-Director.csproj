@@ -8,12 +8,12 @@
     <Authors>Oguz Sandikci</Authors>
     <Company>Bit34 Games</Company>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\"/>
-    <None Include="LICENSE.txt" Pack="true" PackagePath="\"/>
+    <None Include="LICENSE.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>

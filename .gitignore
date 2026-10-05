@@ -18,6 +18,21 @@ ehthumbs.db
 # Visual Studio 2015
 .vs/
 
+# Build results
+#   build.py runs `dotnet build -c Release`, which writes bin/ here — including
+#   the .nupkg that `dotnet pack` produces. None of it belongs in the repo.
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Bb]in/
+x64/
+x86/
+bld/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
 # Unity generated
 [Tt]emp/
 [Oo]bj/

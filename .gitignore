@@ -1,3 +1,7 @@
+*.meta
+!unity/**/*.meta
+
+
 # OS generated
 .DS_Store*
 ._*

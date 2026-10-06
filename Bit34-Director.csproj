@@ -12,6 +12,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- unity/ is not part of this assembly: it holds engine-specific source
+         that build.py mirrors into the UPM package as plain scripts. The
+         files also carry #if UNITY_2018_1_OR_NEWER guards, so this is the
+         structural half of the same statement. -->
+    <Compile Remove="unity/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\"/>
     <None Include="LICENSE.md" Pack="true" PackagePath="\"/>
   </ItemGroup>

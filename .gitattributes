@@ -6,21 +6,59 @@
 # on a machine configured for CRLF rewrites every file, and the next commit
 # from it shows unrelated files as wholly modified.
 #
-# This repo is a plain .NET project: all of its tracked content is source.
-# The binary types below are the ones a .NET build drops in if a build output
-# ever stops being gitignored.
+# Binary types are named explicitly below so that detection never has to be
+# right about them. src/ is plain C#; unity/ carries Unity assets, which is
+# why this repo uses the Unity list rather than a .NET one.
 # ============================================================================
 
 * text=auto eol=lf
 
 
 # ---- Binary: never touch the bytes ----------------------------------------
+
 *.dll    binary
 *.pdb    binary
-*.exe    binary
 *.so     binary
 *.dylib  binary
 *.a      binary
-*.nupkg  binary
-*.snk    binary
+
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.psd    binary
+*.tga    binary
+*.tif    binary
+*.tiff   binary
+*.ico    binary
+*.exr    binary
+*.hdr    binary
+
+*.mp3    binary
+*.ogg    binary
+*.wav    binary
+*.aif    binary
+*.aiff   binary
+
+*.fbx    binary
+*.obj    binary
+*.blend  binary
+*.dae    binary
+*.3ds    binary
+
+*.ttf    binary
+*.otf    binary
+
 *.zip    binary
+*.unitypackage binary
+
+
+# ---- Note on Unity's YAML files --------------------------------------------
+# .meta, .asset, .unity, .prefab and friends are YAML and are handled by the
+# text=auto rule above — unless the project is set to Force Binary asset
+# serialization, in which case git's own binary detection keeps them safe.
+# They are deliberately not forced to `text` for that reason.
+#
+# Unity ships a smart merge tool (UnityYAMLMerge) that can be wired up with a
+# `merge=unityyamlmerge` attribute, but that needs a matching merge driver in
+# each machine's git config, so it is left out here.
